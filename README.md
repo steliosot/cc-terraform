@@ -1,4 +1,4 @@
-# cloud-computing-lab-6-terraform
+# cloud-computing-lab-terraform
 Infra provisioned by Terraform in Google Cloud
 
 ### Prerequisites
