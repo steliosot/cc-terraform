@@ -29,13 +29,17 @@ jobs:
         uses: google-github-actions/auth@v0
         with:
           credentials_json: ${{ secrets.GCP_TF_SA_CREDS_BASE64 }}
-
+      
       # Store terraform SA credentials
       - name: Store SA credentials to the credentials json file
         id: sa-config
         run: |
           echo ${{ secrets.GCP_TF_SA_CREDS_BASE64 }} | base64 -d > credentials.json
         shell: bash
+
+      # Install Terraform in the runner
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
 
       # Init terraform modules
       - name: Terraform Init
